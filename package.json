@@ -13,5 +13,8 @@
   },
   "dependencies": {
     "connect": "^3.0.1"
+  },
+  "devDependencies": {
+    "minimist": "^0.2.0"
   }
 }
