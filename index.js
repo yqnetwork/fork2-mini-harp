@@ -1,5 +1,7 @@
 var connect = require('connect');
-var createMiniHarp = function() {
+var serveStatic = require('serve-static');
+
+var createMiniHarp = function(staticpath) {
   var app = connect();
   app.use(function(req, res, next) {
     var url = req.url.split('/');
@@ -8,7 +10,7 @@ var createMiniHarp = function() {
     } else {
       next();
     }
-  });
+  }).use(serveStatic(staticpath));
   return app;
 };
 
